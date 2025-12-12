@@ -164,24 +164,7 @@
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #050505 0%, transparent 60%, #050505 100%);">
         </div>
 
-        <!-- Overlay for the 'Wave' look - Single Beam, Slow & Smooth -->
-        <svg viewBox="0 0 1440 600" preserveAspectRatio="none"
-            style="position: absolute; top: 10%; left: 0; width: 100%; height: 80%; opacity: 0.3; mix-blend-mode: screen;">
-            <defs>
-                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="rgba(255,255,255,0.05)" />
-                    <stop offset="50%" stop-color="rgba(255,255,255,0.4)" />
-                    <stop offset="100%" stop-color="rgba(255,255,255,0.05)" />
-                </linearGradient>
-            </defs>
 
-            <!-- Single Wave: Slow, Natural, High Amplitude -->
-            <path fill="none" stroke="url(#waveGradient)" stroke-width="3" filter="url(#blur)">
-                <animate attributeName="d" values="M0,300 C480,800 960,-200 1440,300;
-                                 M0,300 C360,-200 1080,800 1440,300;
-                                 M0,300 C480,800 960,-200 1440,300" dur="20s" repeatCount="indefinite" />
-            </path>
-        </svg>
     </div>
 
     <!-- Navigation -->

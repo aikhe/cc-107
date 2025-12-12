@@ -16,6 +16,7 @@
     <meta name="twitter:image" content="https://aikhe.github.io/cc-107/assets/social-banner.png">
     <style>
         /* Custom Scrollbar */
+        /* Custom Scrollbar - Global */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -32,6 +33,18 @@
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
+        /* Specific Lyrics Card Scrollbar - ensuring it's dark/transparent */
+        .lyrics-card {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+
+        .lyrics-card::-webkit-scrollbar-track {
+            background: transparent;
+            margin: 10px 0;
+        }
+
 
         /* Compact Table Styling */
         .profile-table td {
@@ -261,7 +274,7 @@
         </div>
 
         <!-- Middle Column: Lyrics (Matching Reference Style) -->
-        <div
+        <div class="lyrics-card"
             style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); height: 100%; overflow-y: auto; text-align: center; position: relative; box-sizing: border-box;">
 
             <!-- Reference Header Style -->
