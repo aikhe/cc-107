@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research II - CC 107</title>
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Research II - CC 107">
+    <meta property="og:description"
+        content="Expanded research on computing architecture components: Hardware, Software, Dataware, and Liveware.">
+    <meta property="og:image" content="https://aikhe.github.io/cc-107/social-banner.png">
+    <meta property="og:url" content="https://aikhe.github.io/cc-107/task4.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://aikhe.github.io/cc-107/social-banner.png">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Table Styling */
+        .category-table {
+            width: 100%;
+            border-spacing: 20px;
+            /* Creates gap between cells */
+            border-collapse: separate;
+            table-layout: fixed;
+            margin-bottom: 50px;
+        }
+
+        .category-table td {
+            vertical-align: top;
+            padding: 0;
+            /* Inner padding handled by div */
+        }
+
+        /* Card container inside TD */
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            transition: 0.3s;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-5px);
+        }
+
+        .card-img-container {
+            height: 140px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: #000;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin: 0 0 8px 0;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Scrollbar for overflow if needed */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed Backgrounds -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+        <!-- Static Image Background (Darkened) -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('bg-texture.jpg'); background-size: cover; background-position: center; opacity: 0.6;">
+        </div>
+
+        <!-- Gradient Overlay -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #050505 0%, transparent 60%, #050505 100%);">
+        </div>
+
+        <!-- Animated Liquid Overlay -->
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+            style="position: absolute; top:0; left:0; width: 100%; height: 100%; opacity: 0.3;">
+            <defs>
+                <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                </filter>
+            </defs>
+            <circle cx="30" cy="20" r="30" fill="#2a4a6e" filter="url(#blur)" style="opacity: 0.5;">
+                <animate attributeName="cx" values="30;70;30" dur="25s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="20;60;20" dur="28s" repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; z-index: 10; position: relative;">
+        <a href="index.html"
+            style="font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.5px;">CC
+            107</a>
+        <a href="index.html"
+            style="padding: 10px 24px; background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 14px; backdrop-filter: blur(10px); transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);"
+            onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'"
+            onmouseout="this.style.backgroundColor='rgba(255,255,255,0.1)'">Back to Hub</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="position: relative; z-index: 10; padding: 20px 4%; max-width: 1600px; margin: 0 auto; overflow: auto;">
+
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1
+                style="font-size: 48px; font-weight: 700; background: linear-gradient(135deg, #fff 0%, #aaa 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0 0 10px 0;">
+                Research & Components II</h1>
+            <p style="color: #888; font-size: 16px; max-width: 600px; margin: 0 auto;">Extended analysis with table
+                layouts and additional components.</p>
+        </div>
+
+        <!-- Hardware Section -->
+        <h2 style="font-size: 24px; margin: 0 0 10px 20px; font-weight: 600;">Hardware</h2>
+        <table class="category-table">
+            <tr>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/hardware-1.jpg" class="card-img"></div>
+                        <h3>GPU</h3>
+                        <p>Specialized processor for graphics rendering and parallel tasks.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/hardware-2.jpg" class="card-img"></div>
+                        <h3>CPU</h3>
+                        <p>Central Processing Unit, the primary "brain" of the computer.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/hardware-3.jpg" class="card-img"></div>
+                        <h3>RAM</h3>
+                        <p>High-speed temporary storage for running applications.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/hardware-4.jpg" class="card-img"></div>
+                        <h3>Storage</h3>
+                        <p>Persistent data storage (HDD/SSD) for long-term retention.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/hardware-5.jpg" class="card-img"></div>
+                        <h3>Microcontrollers</h3>
+                        <p>Compact ICs for embedded systems like Raspberry Pi.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Software Section -->
+        <h2 style="font-size: 24px; margin: 0 0 10px 20px; font-weight: 600;">Software</h2>
+        <table class="category-table">
+            <tr>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/software-1.jpg" class="card-img"></div>
+                        <h3>Windows</h3>
+                        <p>Dominant desktop OS known for gaming and compatibility.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/software-2.jpg" class="card-img"></div>
+                        <h3>macOS</h3>
+                        <p>Unix-based OS renowned for stability and creative workflows.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/software-3.jpg" class="card-img"></div>
+                        <h3>Linux</h3>
+                        <p>Open-source kernel powering servers and supercomputers.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/software-4.jpg" class="card-img"></div>
+                        <h3>Android</h3>
+                        <p>Mobile OS by Google based on a modified Linux kernel.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/software-5.jpg" class="card-img"></div>
+                        <h3>iOS</h3>
+                        <p>Apple's secure and polished mobile operating system.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Dataware Section (with 5 items) -->
+        <h2 style="font-size: 24px; margin: 0 0 10px 20px; font-weight: 600;">Dataware</h2>
+        <table class="category-table">
+            <tr>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/dataware-1.jpeg" class="card-img"></div>
+                        <h3>Google BigQuery</h3>
+                        <p>Serverless, scalable multi-cloud data warehouse.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/dataware-2.jpg" class="card-img"></div>
+                        <h3>Snowflake</h3>
+                        <p>Cloud-based data storage and analytics service.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/dataware-3.jpg" class="card-img"></div>
+                        <h3>Amazon Redshift</h3>
+                        <p>Fast, fully managed cloud data warehouse service.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/dataware-4.png" class="card-img"></div>
+                        <h3>E-commerce</h3>
+                        <p>Online buying and selling of goods and services.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/dataware-5.png" class="card-img"></div>
+                        <h3>Financial Services</h3>
+                        <p>Management of money and investments by organizations.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Liveware Section (with 5 items) -->
+        <h2 style="font-size: 24px; margin: 0 0 10px 20px; font-weight: 600;">Liveware</h2>
+        <table class="category-table">
+            <tr>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/liveware-1.jpg" class="card-img"></div>
+                        <h3>Programmer</h3>
+                        <p>Writes code to create software applications.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/liveware-2.png" class="card-img"></div>
+                        <h3>Manager</h3>
+                        <p>Oversees IT infrastructure and project teams.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/liveware-3.jpg" class="card-img"></div>
+                        <h3>User</h3>
+                        <p>Interacts with systems to perform daily tasks.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/liveware-4.png" class="card-img"></div>
+                        <h3>Designer</h3>
+                        <p>Creates the visual and functional aspects of software.</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <div class="card-img-container"><img src="task2-assets/liveware-5.png" class="card-img"></div>
+                        <h3>Hardware Engineer</h3>
+                        <p>Designs and develops physical computer components.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div style="height: 50px;"></div>
+
+    </main>
+
+    <!-- Footer -->
+    <div style="text-align: center; padding: 40px; color: #444; font-size: 12px; z-index: 10; position: relative;">
+        &copy; 2024 CC 107 Research II
+    </div>
+
+</body>
+
+</html>
