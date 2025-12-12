@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile & Calendar - CC 107</title>
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Profile & Calendar - CC 107">
+    <meta property="og:description" content="Personal profile information and December 2025 calendar.">
+    <meta property="og:image" content="social-banner.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="social-banner.png">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Compact Table Styling */
+        .profile-table td {
+            padding: 12px 10px;
+            /* Increased vertical padding */
+            vertical-align: top;
+            /* removed border-bottom */
+        }
+
+        .profile-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+            /* Subtle hover effect instead of lines */
+            border-radius: 4px;
+        }
+
+        /* Calendar Compact Styling */
+        .calendar-table {
+            height: 100%;
+            width: 100%;
+            table-layout: fixed;
+            /* Ensures equal cell widths */
+        }
+
+        .calendar-table td,
+        .calendar-table th {
+            padding: 0;
+            /* Remove padding to let flex/table align properly */
+            text-align: center;
+            font-size: 14px;
+            vertical-align: middle;
+            height: 14%;
+            /* Roughly 100% / 7 rows */
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #050505; color: #ffffff; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; height: 100vh; overflow: hidden; display: flex; flex-direction: column;">
+
+    <!-- Consistent Hub Background (SVG Liquid + Waves) -->
+    <div
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none;">
+        <!-- Liquid Blobs -->
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="width: 100%; height: 100%; opacity: 0.6;">
+            <defs>
+                <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                </filter>
+            </defs>
+            <circle cx="20" cy="30" r="30" fill="#444444" filter="url(#blur)" style="opacity: 0.6;">
+                <animate attributeName="cx" values="20;80;20" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="30;70;30" dur="23s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="80" cy="70" r="35" fill="#666666" filter="url(#blur)" style="opacity: 0.5;">
+                <animate attributeName="cx" values="80;20;80" dur="25s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="70;20;70" dur="22s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="50" cy="50" r="40" fill="#2a2a2a" filter="url(#blur)" style="opacity: 0.4;">
+                <animate attributeName="r" values="40;50;40" dur="15s" repeatCount="indefinite" />
+                <animate attributeName="cx" values="50;60;40;50" dur="18s" repeatCount="indefinite" />
+            </circle>
+        </svg>
+
+        <!-- Wave Overlay -->
+        <svg viewBox="0 0 1440 600" preserveAspectRatio="none"
+            style="position: absolute; top: 10%; left: 0; width: 100%; height: 80%; opacity: 0.9; mix-blend-mode: screen;">
+            <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                    <stop offset="50%" stop-color="rgba(255,255,255,0.5)" />
+                    <stop offset="100%" stop-color="rgba(255,255,255,0.1)" />
+                </linearGradient>
+            </defs>
+            <path fill="none" stroke="url(#waveGradient)" stroke-width="2"
+                d="M0,300 C360,600, 720,0, 1080,600, 1440,300" filter="url(#blur)">
+                <animate attributeName="d" values="M0,300 C360,600, 720,0, 1080,600 C1200,450, 1440,300;
+                         M0,300 C200,0, 500,600, 900,100 C1200,500, 1440,300;
+                         M0,300 C360,600, 720,0, 1080,600 C1200,450, 1440,300" dur="12s" repeatCount="indefinite" />
+            </path>
+            <path fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="4"
+                d="M0,300 C400,0, 800,600, 1200,100 L1440,300" filter="url(#blur)">
+                <animate attributeName="d" values="M0,300 C400,100, 800,500, 1200,200 L1440,300;
+                         M0,300 C400,600, 800,0, 1200,550 L1440,300;
+                         M0,300 C400,100, 800,500, 1200,200 L1440,300" dur="18s" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; z-index: 10; position: relative;">
+        <a href="index.html"
+            style="font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.5px;">CC
+            107</a>
+        <a href="index.html"
+            style="padding: 10px 24px; background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 14px; backdrop-filter: blur(10px); transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);"
+            onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'"
+            onmouseout="this.style.backgroundColor='rgba(255,255,255,0.1)'">Back to Hub</a>
+    </nav>
+
+    <!-- Main Content Grid -->
+    <main
+        style="position: relative; z-index: 10; padding: 0 4%; flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; height: calc(100vh - 100px); overflow: hidden; align-items: start; padding-bottom: 30px;">
+
+        <!-- Left Column: Calendar (December 2025) -->
+        <div
+            style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); height: 100%; display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box;">
+            <h2 style="text-align: center; margin-top: 0; margin-bottom: 15px; color: #fff; font-size: 22px;">December
+                2025</h2>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; height: 100%;">
+                <table class="calendar-table"
+                    style="width: 100%; height: 100%; border-collapse: collapse; text-align: center; color: #ddd;">
+                    <thead>
+                        <tr style="color: #888;">
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #444;">30</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td style="font-weight: bold; color: #fff;">
+                                <div
+                                    style="background: rgba(255,255,255,0.1); border-radius: 8px; width: 100%; height: 80%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                                    12</div>
+                            </td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td style="font-weight: bold;">25</td>
+                            <td>26</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td style="font-weight: bold;">31</td>
+                            <td style="color: #444;">1</td>
+                            <td style="color: #444;">2</td>
+                            <td style="color: #444;">3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div
+                style="margin-top: 15px; font-size: 13px; color: #888; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+                <span style="color: #fff; font-weight: bold;">25</span> Christmas Day &bull; <span
+                    style="color: #fff; font-weight: bold;">31</span> New
+                Year's Eve
+            </div>
+        </div>
+
+        <!-- Middle Column: Lyrics (Matching Reference Style) -->
+        <div
+            style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); height: 100%; overflow-y: auto; text-align: center; position: relative; box-sizing: border-box;">
+
+            <!-- Reference Header Style -->
+            <div
+                style="font-size: 11px; font-weight: 600; letter-spacing: 3px; color: #888; margin-bottom: 40px; text-transform: uppercase;">
+                Lyrics
+            </div>
+
+            <div style="font-size: 16px; line-height: 2.4; color: #fff; white-space: pre-line;">
+                I know your eyes in the morning sun
+                I feel you touch me in the pouring rain
+                And the moment that you wander far from me
+                I need you in my arms again
+                And you come to me on a summer breeze
+                Keep me warm in your love then you softly leave
+                It's me you need to show
+                How deep is your love?
+
+                How deep is your love
+                How deep is your love
+                I really mean to learn
+                'Cause we're living in a world of fools
+                Breaking us down
+                When they all should let us be
+                We belong to you and me
+
+                I believe in you
+                You know the door to my very soul
+                You're the light in my deepest, darkest hour
+                You're my savior when I fall
+                And you may not think that I care for you
+                When you know down inside that I really do
+                And it's me you need to show
+                How deep is your love?
+
+                How deep is your love
+                How deep is your love
+                I really mean to learn
+                'Cause we're living in a world of fools
+                Breaking us down
+                When they all should let us be
+                We belong to you and me
+
+                And you come to me on a summer breeze
+                Keep me warm in your love then you softly leave
+                And it's me you need to show
+                How deep is your love?
+
+                How deep is your love
+                How deep is your love
+                I really mean to learn
+                'Cause we're living in a world of fools
+                Breaking us down
+                When they all should let us be
+                We belong to you and me
+            </div>
+        </div>
+
+        <!-- Right Column: Personal Information (Compact & Updated) -->
+        <div
+            style="background: rgba(255,255,255,0.05); border-radius: 20px; padding: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); height: 100%; overflow-y: auto; box-sizing: border-box;">
+            <h2 style="text-align: center; margin-top: 0; margin-bottom: 20px; font-size: 22px;">Personal Profile</h2>
+
+            <table class="profile-table"
+                style="width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px;">
+                <tr>
+                    <td style="color: #888; font-weight: 600; width: 35%;">Name</td>
+                    <td style="color: #fff; font-weight: 500;">Ike Andrie N. Rosacay</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600;">Nickname</td>
+                    <td style="color: #fff; font-weight: 500;">ikeike</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600;">Age</td>
+                    <td style="color: #fff; font-weight: 500;">18</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600;">Birthday</td>
+                    <td style="color: #fff; font-weight: 500;">January 15, 2007</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600;">Zodiac</td>
+                    <td style="color: #fff; font-weight: 500;">Capricorn</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600;">Email</td>
+                    <td style="color: #fff; font-weight: 500;">ikeandrie.ro@gmail.com</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Guardian</td>
+                    <td style="color: #fff; font-weight: 500;">My Beloved Mother</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Occupation</td>
+                    <td style="color: #fff; font-weight: 500; line-height: 1.4;">
+                        Full Stack Web Developer (Current)<br>
+                        <span style="color: #aaa; font-size: 13px;">Comp. Lab Tech (Prev)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Address</td>
+                    <td style="color: #fff; font-weight: 500; line-height: 1.4; font-size: 13px;">724 Bo. Conception
+                        Dulo Tala Bagong Silang, Caloocan City</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Secondary School</td>
+                    <td style="color: #fff; font-weight: 500; line-height: 1.4;">St. Clare College of Caloocan <span
+                            style="color: #aaa; font-size: 12px; display: block;">(Senior High School)</span></td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Year Graduated</td>
+                    <td style="color: #fff; font-weight: 500;">August 2024 (Present)</td>
+                </tr>
+                <tr>
+                    <td style="color: #888; font-weight: 600; vertical-align: top;">Other Schools</td>
+                    <td style="color: #fff; font-weight: 500; line-height: 1.4; font-size: 13px;">
+                        Tala High School <span style="color: #aaa;">(JHS)</span><br>
+                        Tala Elementary <span style="color: #aaa;">(Elem)</span>
+                    </td>
+                </tr>
+            </table>
+
+            <div
+                style="margin-top: 25px; text-align: center; color: #666; font-size: 12px; font-style: italic; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                "Striving for excellence in every line of code."
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
