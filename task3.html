@@ -65,6 +65,54 @@
             height: 14%;
             /* Roughly 100% / 7 rows */
         }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5% !important;
+                /* No flex-direction: column */
+            }
+
+            nav>a:first-child {
+                font-size: 20px !important;
+            }
+
+            nav>a:last-child {
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+
+            main {
+                display: flex !important;
+                flex-direction: column !important;
+                height: auto !important;
+                overflow: visible !important;
+                padding: 20px 4% !important;
+            }
+
+            body {
+                height: auto !important;
+                overflow-y: auto !important;
+            }
+
+            /* Adjust individual column containers */
+            main>div {
+                height: auto !important;
+                overflow: visible !important;
+                max-height: none !important;
+            }
+
+            /* Calendar adjustments for mobile to prevent overflow */
+            .calendar-table td,
+            .calendar-table th {
+                padding: 5px 2px !important;
+                font-size: 13px !important;
+                height: auto !important;
+            }
+
+            .calendar-table tr {
+                height: 40px !important;
+            }
+        }
     </style>
 </head>
 

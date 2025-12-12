@@ -14,6 +14,50 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://aikhe.github.io/cc-107/social-banner.png">
+    <style>
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5% !important;
+                /* Keep row direction, space-between handled by default */
+            }
+
+            nav>a:first-child {
+                font-size: 20px !important;
+            }
+
+            nav>a:last-child {
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+
+            main {
+                flex-direction: column !important;
+                gap: 30px !important;
+                height: auto !important;
+                padding: 20px 5% !important;
+                overflow: visible !important;
+            }
+
+            body {
+                height: auto !important;
+                overflow-y: auto !important;
+            }
+
+            /* Reset fixed heights/widths for containers */
+            div[style*="width: 300px"] {
+                width: 100% !important;
+                max-width: 300px;
+            }
+
+            /* Lyrics Container */
+            div[style*="flex: 0 1 500px"] {
+                flex: none !important;
+                height: auto !important;
+                width: 100% !important;
+                overflow: visible !important;
+            }
+        }
+    </style>
 </head>
 
 <body

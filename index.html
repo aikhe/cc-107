@@ -16,6 +16,96 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://aikhe.github.io/cc-107/social-banner.png">
+    <style>
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5% !important;
+                /* Keep items aligned in row */
+            }
+
+            /* Show Hamburger */
+            #hamburger-btn {
+                display: block !important;
+                order: 3;
+                /* Rightmost */
+            }
+
+            /* Logo */
+            nav>div:first-child {
+                order: 1;
+            }
+
+            /* Get Started Button - Keep Visible */
+            nav>a[href="task1.html"]:last-of-type {
+                order: 2;
+                margin-right: 10px;
+                margin-left: auto;
+                /* Push to right near hamburger */
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+                display: block !important;
+                /* Ensure visible */
+            }
+
+            /* Dropdown Menu (Hidden by default via JS, shown via JS) */
+            nav>#nav-links {
+                display: none;
+                /* JS toggles this to flex */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 20px 0;
+                gap: 20px !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                text-align: center;
+            }
+
+            /* Ensure links in dropdown are visible and clickable */
+            nav>#nav-links a {
+                color: #fff !important;
+                font-size: 18px !important;
+                padding: 10px 0;
+                display: block;
+            }
+
+            nav>#nav-links a:hover {
+                background: rgba(255, 255, 255, 0.05);
+                /* Highlight on touch/hover */
+            }
+
+            /* Reset scrollbar hiders */
+            nav>div:nth-child(2) {
+                overflow: visible !important;
+            }
+
+            h1 {
+                font-size: 40px !important;
+            }
+
+            p {
+                font-size: 14px !important;
+            }
+
+            /* Stack buttons in hero */
+            div[style*="display: flex; gap: 16px"] {
+                flex-direction: column;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            a[style*="padding: 16px 36px"] {
+                width: 100%;
+                box-sizing: border-box;
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body
@@ -79,9 +169,23 @@
     </div>
 
     <!-- Navigation -->
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; z-index: 10;">
+    <nav
+        style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; z-index: 100; position: relative;">
+        <!-- Logo -->
         <div style="font-size: 24px; font-weight: 700; color: #fff; letter-spacing: -0.5px;">CC 107</div>
-        <div style="display: flex; gap: 30px;">
+
+        <!-- Hamburger Icon (Visible on Mobile) -->
+        <div id="hamburger-btn" style="display: none; cursor: pointer; padding: 10px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
+
+        <!-- Links Container -->
+        <div id="nav-links" style="display: flex; gap: 30px;">
             <a href="task1.html"
                 style="color: #ccc; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s;"
                 onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ccc'">Lyric Song</a>
@@ -95,11 +199,36 @@
                 style="color: #ccc; text-decoration: none; font-size: 15px; font-weight: 500; transition: 0.3s;"
                 onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#ccc'">Research II</a>
         </div>
+
         <a href="task1.html"
             style="padding: 10px 24px; background-color: #fff; color: #000; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 14px; transition: 0.3s;"
             onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Get
             Started</a>
     </nav>
+
+    <script>
+        const hamburger = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        });
+
+        // Reset on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                document.getElementById('hamburger-btn').style.display = 'none';
+            } else {
+                navLinks.style.display = 'none';
+                document.getElementById('hamburger-btn').style.display = 'block';
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <main

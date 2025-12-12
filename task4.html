@@ -100,6 +100,53 @@
             background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
         }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 5% !important;
+            }
+
+            nav>a:first-child {
+                font-size: 20px !important;
+            }
+
+            nav>a:last-child {
+                padding: 8px 16px !important;
+                font-size: 13px !important;
+            }
+
+            h1 {
+                font-size: 32px !important;
+            }
+
+            main {
+                padding: 20px 4% !important;
+            }
+
+            /* Table responsiveness: Stack cells vertically */
+            .category-table,
+            .category-table tbody,
+            .category-table tr,
+            .category-table td {
+                display: block !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .category-table tr {
+                margin-bottom: 0;
+            }
+
+            .category-table td {
+                margin-bottom: 20px;
+                /* Space between cards */
+            }
+
+            /* Reset fixed table layout */
+            .category-table {
+                table-layout: auto !important;
+            }
+        }
     </style>
 </head>
 
