@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - CC 107</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #050505; color: #ffffff; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow-x: hidden;">
+
+    <!-- Fixed Backgrounds -->
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;">
+        <!-- Static Image Background (Darkened) -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('bg-texture.jpg'); background-size: cover; background-position: center; opacity: 0.6;">
+        </div>
+
+        <!-- Gradient Overlay -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, #050505 0%, transparent 50%, #050505 100%);">
+        </div>
+
+        <!-- Animated Liquid Overlay (Consistent with other pages) -->
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none"
+            style="position: absolute; top:0; left:0; width: 100%; height: 100%; opacity: 0.4;">
+            <defs>
+                <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+                </filter>
+            </defs>
+            <circle cx="20" cy="30" r="30" fill="#444444" filter="url(#blur)" style="opacity: 0.6;">
+                <animate attributeName="cx" values="20;80;20" dur="20s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="30;70;30" dur="23s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="80" cy="70" r="35" fill="#666666" filter="url(#blur)" style="opacity: 0.5;">
+                <animate attributeName="cx" values="80;20;80" dur="25s" repeatCount="indefinite" />
+                <animate attributeName="cy" values="70;20;70" dur="22s" repeatCount="indefinite" />
+            </circle>
+        </svg>
+
+        <!-- Wave Overlay -->
+        <svg viewBox="0 0 1440 600" preserveAspectRatio="none"
+            style="position: absolute; top: 10%; left: 0; width: 100%; height: 80%; opacity: 0.6; mix-blend-mode: screen;">
+            <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="rgba(255,255,255,0.1)" />
+                    <stop offset="50%" stop-color="rgba(255,255,255,0.5)" />
+                    <stop offset="100%" stop-color="rgba(255,255,255,0.1)" />
+                </linearGradient>
+            </defs>
+            <path fill="none" stroke="url(#waveGradient)" stroke-width="2"
+                d="M0,300 C360,600, 720,0, 1080,600, 1440,300" filter="url(#blur)">
+                <animate attributeName="d"
+                    values="M0,300 C360,600, 720,0, 1080,600 C1200,450, 1440,300; M0,300 C200,0, 500,600, 900,100 C1200,500, 1440,300; M0,300 C360,600, 720,0, 1080,600 C1200,450, 1440,300"
+                    dur="12s" repeatCount="indefinite" />
+            </path>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        style="display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; z-index: 10; position: relative;">
+        <a href="index.html"
+            style="font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.5px;">CC
+            107</a>
+        <a href="index.html"
+            style="padding: 10px 24px; background-color: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 14px; backdrop-filter: blur(10px); transition: 0.3s; border: 1px solid rgba(255,255,255,0.1);"
+            onmouseover="this.style.backgroundColor='rgba(255,255,255,0.2)'"
+            onmouseout="this.style.backgroundColor='rgba(255,255,255,0.1)'">Back to Hub</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main style="position: relative; z-index: 10; padding: 20px 8%; max-width: 1400px; margin: 0 auto;">
+
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1
+                style="font-size: 48px; font-weight: 700; background: linear-gradient(135deg, #fff 0%, #aaa 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 0 0 10px 0;">
+                Research & Components</h1>
+            <p style="color: #888; font-size: 16px; max-width: 600px; margin: 0 auto;">Comprehensive breakdown of
+                computing architecture components including hardware, software, dataware, and liveware.</p>
+        </div>
+
+        <!-- Hardware Section -->
+        <section style="margin-bottom: 50px;">
+            <div style="margin-bottom: 20px;">
+                <h2 style="font-size: 28px; margin: 0; font-weight: 600;">Hardware</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
+                <!-- 1. GPU -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/hardware-1.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">GPU</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Specialized processor designed
+                        to accelerate graphics rendering and parallel processing tasks.</p>
+                </div>
+                <!-- 2. CPU -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/hardware-2.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">CPU</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Central Processing Unit, the
+                        primary component representing the "brain" of the computer.</p>
+                </div>
+                <!-- 3. RAM -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/hardware-3.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">RAM</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Random Access Memory provides
+                        high-speed temporary storage for running applications.</p>
+                </div>
+                <!-- 4. Hard Drive -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/hardware-4.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Storage</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Persistent data storage
+                        solutions including HDDs and SSDs for long-term file retention.</p>
+                </div>
+                <!-- 5. Microcontrollers -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/hardware-5.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Microcontrollers</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Compact integrated circuits
+                        like Raspberry Pi used for embedded systems and DIY projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Software Section -->
+        <section style="margin-bottom: 50px;">
+            <div style="margin-bottom: 20px;">
+                <h2 style="font-size: 28px; margin: 0; font-weight: 600;">Software</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
+                <!-- 1. Windows -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/software-1.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Windows</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Dominant desktop OS by
+                        Microsoft, known for broad compatibility and gaming.</p>
+                </div>
+                <!-- 2. MacOS -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/software-2.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">macOS</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Apple's Unix-based OS,
+                        renowned for stability, creative workflows, and ecosystem ecosystem.</p>
+                </div>
+                <!-- 3. Linux -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/software-3.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Linux</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Open-source OS kernel powering
+                        everything from servers to supercomputers and Android.</p>
+                </div>
+                <!-- 4. Android -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/software-4.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Android</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Mobile operating system
+                        developed by Google, based on a modified Linux kernel.</p>
+                </div>
+                <!-- 5. iOS -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/software-5.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">iOS</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Apple's mobile OS powering
+                        iPhone, known for its security and polished UX.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dataware Section -->
+        <section style="margin-bottom: 50px;">
+            <div style="margin-bottom: 20px;">
+                <h2 style="font-size: 28px; margin: 0; font-weight: 600;">Dataware</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
+                <!-- 1. Google Big Query -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/dataware-1.jpeg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Google BigQuery</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Serverless, highly scalable,
+                        and cost-effective multi-cloud data warehouse designed for business agility.</p>
+                </div>
+                <!-- 2. Snowflake -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/dataware-2.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Snowflake</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Cloud computing-based data
+                        cloud company that offers a cloud-based data storage and analytics service.</p>
+                </div>
+                <!-- 3. Amazon Redshift -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/dataware-3.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Amazon Redshift</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Fast, fully managed cloud data
+                        warehouse that makes it simple and cost-effective to analyze all your data.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liveware Section -->
+        <section style="margin-bottom: 50px;">
+            <div style="margin-bottom: 20px;">
+                <h2 style="font-size: 28px; margin: 0; font-weight: 600;">Liveware</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px;">
+                <!-- 1. Programmer -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/liveware-1.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Programmer</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Specialist who writes code to
+                        create software applications and systems.</p>
+                </div>
+                <!-- 2. Manager -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/liveware-2.png"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">Manager</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">Oversees the IT
+                        infrastructure, projects, and teams to ensure alignment with business goals.</p>
+                </div>
+                <!-- 3. Computer User -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; transition: 0.3s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.06)'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.transform='translateY(0)'">
+                    <div
+                        style="height: 160px; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: #000;">
+                        <img src="task2-assets/liveware-3.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </div>
+                    <h3 style="font-size: 18px; margin: 0 0 10px 0;">User</h3>
+                    <p style="font-size: 14px; color: #888; line-height: 1.5; margin: 0;">The end-user who interacts
+                        with the computer systems and applications to perform tasks.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div style="text-align: center; padding: 40px; color: #444; font-size: 12px; z-index: 10; position: relative;">
+        &copy; 2024 CC 107 Research
+    </div>
+
+</body>
+
+</html>
